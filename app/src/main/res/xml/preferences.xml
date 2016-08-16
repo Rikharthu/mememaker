@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- this file not only holds KEY-VALUE pairs and their defaults
+    but also holds information on how this will be displayed by settings activity -->
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Just grouping preferences under a category -->
+    <PreferenceCategory
+        android:title="@string/pref_storage_title"
+        android:key="pref_key_storage_settings">
+
+        <!-- A Preference that displays a list of entries as a dialog. -->
+        <ListPreference
+            android:key="@string/storage_key"
+            android:title="@string/title_storage_type"
+            android:dialogTitle="@string/title_storage_type"
+            android:entries="@array/storageEntries"
+            android:entryValues="@array/storageValueEntries"
+            android:defaultValue="@string/storage_default_value"
+            />
+        <!-- for entries see values/array.xml
+         values of this array will be used by Settings activity
+         to  show available values for this preference
+          each entry must have a corresponding entryValue (entries[1] <-> entryValues[1] and etc)-->
+
+    </PreferenceCategory>
+
+</PreferenceScreen>
