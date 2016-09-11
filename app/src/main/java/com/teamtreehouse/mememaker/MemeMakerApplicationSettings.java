@@ -16,6 +16,7 @@ public class MemeMakerApplicationSettings {
     SharedPreferences mSharedPreferences;
 
     public MemeMakerApplicationSettings(Context context) {
+        // SharedPreferences settings = context.getSharedPreferences("Preferences Name", 0);
         mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);
     }
 

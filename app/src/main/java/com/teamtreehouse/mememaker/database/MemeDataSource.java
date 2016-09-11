@@ -12,10 +12,11 @@ import com.teamtreehouse.mememaker.models.MemeAnnotation;
 import java.util.ArrayList;
 import java.util.Date;
 
-// This is a helper class.
-// Application will use this class to interract with the database
-// SQL syntax is used ONLY here and in SQLiteHelper (like FileUtilities)
-// Just for separation of concerns
+/** This is a helper class.
+ Application will use this class to interract with the database
+ SQL syntax is used ONLY here and in SQLiteHelper (like FileUtilities)
+ Just for separation of concerns
+*/
 public class MemeDataSource {
 
     private Context mContext;

@@ -50,17 +50,20 @@ public class FileUtilities {
         }
     }
 
-    // get file directory, depending on the chosen storage method
+    /** get file directory, depending on the chosen storage method */
     public static File getFileDirectory(Context context) {
         // retrieve storage type from shared preferences by using our helper class
         MemeMakerApplicationSettings settings = new MemeMakerApplicationSettings(context);
         String storageType = settings.getStoragePreference();
+
         // depending on selected storage type return according file directory
         if(storageType.equals(StorageType.INTERNAL)) {
             // internal storage
             // data/data/com.teamtreehouse.mememaker/files
             return context.getFilesDir();
         } else {
+            // external storage
+            // check for availability
             if(isExternalStorageAvailable()) {
                 if(storageType.equals(StorageType.PRIVATE_EXTERNAL)) {
                     return context.getExternalFilesDir(null);
@@ -73,6 +76,7 @@ public class FileUtilities {
         }
     }
 
+    /** Check external storage for availability */
     public static boolean isExternalStorageAvailable() {
         String state = Environment.getExternalStorageState();
         if(Environment.MEDIA_MOUNTED.equals(state)) {
